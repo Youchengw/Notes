@@ -29,3 +29,4 @@ $$
 Τhe colon （:） or vertical bar （|）read as "such that".
 
 ## Ordered pairs
+**An ordered pair** is a set whose elements are $x,y$, and $x,y=y,x$. Therefore, presentation order does not matter, the set is the same.
