@@ -20,13 +20,19 @@ D: the set of all dogs
 d: dog
 *The set of all black dogs*: 
 $$
-B= \left\{d\in D: d is black \right\}
+B= \left\{d\in D: d\ is\  black\right\}
 $$
 οr
 $$
-B= \left\{d\in D|\, d is black \right\}
+B= \left\{d\in D|\, d\ is\ black \right\}
 $$
 Τhe colon （:） or vertical bar （|）read as "such that".
 
 ## Ordered pairs
-**An ordered pair** is a set whose elements are $x,y$, and $x,y=y,x$. Therefore, presentation order does not matter, the set is the same.
+**An unordered pair** is a set whose elements are $x,y$, and $x,y=y,x$. Therefore, presentation order does not matter, the set is the same.
+
+In machine learning, we usually **do** care about the presentation order. So we need to define an ordered pair.
+An **ordered pair** is denoted as $ \left(x,y\right) $, with $x$ as the *the first coordinate* and $y$ as the *second coordinate*. $ \left(x,y\right)\neq\left(y,x\right)$.
+
+## Relations
+We can derive the idea of **relations** among sets or between elements and sets
