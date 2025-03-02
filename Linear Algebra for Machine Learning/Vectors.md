@@ -1,0 +1,1 @@
+Linear algebra is the study of vectors. At the most general level, vectors are **ordered finite lists of numbers**. 
