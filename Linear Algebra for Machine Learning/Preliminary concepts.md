@@ -26,7 +26,7 @@ $$
 $$
 B= \left\{d\in D|\, d\ is\ black \right\}
 $$
-Τhe colon （:） or vertical bar （|）read as "such that".
+Τhe colon $\left(\ :\ \right)$ or vertical bar $\left(\ :\ \right)$ read as "such that".
 
 ## Ordered pairs
 **An unordered pair** is a set whose elements are $x,y$, and $x,y=y,x$. Therefore, presentation order does not matter, the set is the same.
