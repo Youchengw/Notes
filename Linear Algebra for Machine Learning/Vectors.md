@@ -76,3 +76,63 @@ We are saying: starting from the origin, move 3 units in the 1st perpendicular a
 
 ## Basic vector operations
 ### Vector-vector addition
+Vector-vector addition is an element-wise operation operation, only defined for vectors of the same size (i.e., number of elements)
+$$
+\vec{x}+\vec{y}=
+\begin{pmatrix}
+x_1 \\
+\vdots \\
+x_n    
+\end{pmatrix}+
+\begin{pmatrix}
+y_1 \\
+\vdots \\
+y_n    
+\end{pmatrix}=
+\begin{pmatrix}
+x_1+y_1 \\
+\vdots \\
+x_n+y_n    
+\end{pmatrix}
+$$
+
+Fundamental properties:
+1. Commutativity: $x+y=y+x$
+2. Associativity: $(x+y)+z=x+(y+z)$
+3. Adding the zero vector has no effect
+4. Substracting a vector from itself returns the zero vector
+
+## Vector-scalar multiplication
+It is defined as:
+$$
+\alpha \vec{x}=
+\begin{pmatrix}
+\alpha x_1\\
+\alpha x_2\\
+\vdots \\
+\alpha x_n
+\end{pmatrix}
+$$
+Vecto-scalar multiplication satisfies a series of important properties:
+1. Associativity: $(\alpha \beta)\vec{x}=\alpha(\beta\vec{x})$
+2. Left-distributive property: $(\alpha+\beta)\vec{x}=\alpha\vec{x}+\beta\vec{x}$
+3. Right-distributive property: $\vec{x}(\alpha+\beta)=\vec{x}\alpha+\vec{x}\beta$
+4. Right-distributive property for vector addition: $\alpha(\vec{x}+\vec{y})=\alpha\vec{x}+\alpha\vec{y}$
+
+## Linear combination of vectors
+Only two operations with vectors in linear algebra are legal: **addition** and **mutiplication by numbers**. When we combine these, we get a **linear combination**.
+$$
+\alpha\vec{x}+\beta\vec{y}=\alpha
+\begin{pmatrix}
+x_1 \\
+x_2
+\end{pmatrix}+\beta
+\begin{pmatrix}
+y_1 \\
+y_2
+\end{pmatrix}=
+\begin{pmatrix}
+\alpha x_1+\alpha x_2 \\
+\beta y_1+\beta y_2
+\end{pmatrix}
+$$
