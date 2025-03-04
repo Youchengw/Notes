@@ -136,3 +136,53 @@ y_2
 \beta y_1+\beta y_2
 \end{pmatrix}
 $$
+## Vector-vector multiplication: dot product
+Vector-vector multiplication is commonly know as a **dot product** or **inner product**. The dot product of $x$ and $y$ is defined as:
+$$
+\vec{x}\cdot\vec{y}= 
+\begin{pmatrix}
+x_1 & x_2
+\end{pmatrix}
+\begin{pmatrix}
+y_1 \\
+y_2
+\end{pmatrix}=
+\begin{pmatrix}
+x_1 \\
+x_2
+\end{pmatrix}^T
+\begin{pmatrix}
+y_1 \\
+y_2
+\end{pmatrix}=
+x_1\times y_1+x_2\times y_2
+$$
+The **T** denotes the transpose of the vector.
+
+## Vector space, span, and subspace
+### Vector space
+A vector spaces, also known as linear space, is a collection of objects that follow the rules defined for vectors in $\mathbb{R}^n$. A vector space is the set of proper vectors and all possible linear combinations of the vector set. In addition, vector addition and multiplication must follow these eight rules:
+1. Commutativity: $x+y=y+x$
+2. Associativity: $x+(y+z)=(x+y)+z$
+3. Unique zero vector such that: $x+0=x\ \forall \ x$
+4. $\forall\ x$ there is a unique vector $x$ such that $x+ - x=0$
+5. Identity element of scalar multiplication: $1\times x=x$
+6. Distributivity of scalar multiplication w.r.t vector addition: $x(y+z)=xz+xy$
+7. $x(yz)=(xy)z$
+8. $(y+z)x=yx+zx$
+
+### Vector span
+If our vectors $\vec{x}$ and $\vec{y}$ point into different directions in the 2-dimensions in the 2-dimensional space, we get that the span$(x,y)$ is equal to the **entire 2-dimensional plane**
+If you combine vectors which point in the same direction, you just can span a line. **Multicollinearity** is closely related to this issue: when two variables are "colinear", they are pointing in the same direction, hence they provide redundant information, so can drop one without information loss.
+With three vectors pointing into different directions, we can span the entire 3-dimensional space or a **hyper-plane**.
+
+### Vector subspaces
+A vector subspace (or linear subspace) is a vector space that lies within a larger vector space. These are also know as linear subspaces. Consider a subspaces $S$. For a vector to be a valid subspace it has to meet three conditions:
+1. Contains the zero vector, $0 \in S$
+2. Closure under multiplication, $\forall\alpha\in\mathbb{R}\rightarrow\alpha\times s_i \in S$
+3. Closure under addition, $\forall s_i \in S\rightarrow s_1+s_2 \in S$
+
+Intuitively, you can think in closure as being unable to "jump out" from space into another. A pair of vectors laying flat in the 2-dimensional space, can't by either addition or multiplicatin, "jump out" into the 3-dimensional space.
+
+## Linear dependence and independence
+A set of vectors is linearly dependent if at least one vector can be obtanined as a linear combination of other vectors in the set. There is more rigurous definition of linear dependence. Consider a 
