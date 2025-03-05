@@ -185,4 +185,26 @@ A vector subspace (or linear subspace) is a vector space that lies within a larg
 Intuitively, you can think in closure as being unable to "jump out" from space into another. A pair of vectors laying flat in the 2-dimensional space, can't by either addition or multiplicatin, "jump out" into the 3-dimensional space.
 
 ## Linear dependence and independence
-A set of vectors is linearly dependent if at least one vector can be obtanined as a linear combination of other vectors in the set. There is more rigurous definition of linear dependence. Consider a set of vectors $x_1, \ldots, x_k$ and scalars $\beta\in\mathbb{R}$. If there is a way to get $0=\sum_{i=1}^k\beta_i x_i$ with at least one $\beta\neq 0$, we have linearly combination of the vectors in the set, with weights that are not all zero, we have a linearly dependent set.
+A set of vectors is linearly dependent if at least one vector can be obtanined as a linear combination of other vectors in the set. There is more rigurous definition of linear dependence. Consider a set of vectors $x_1, \ldots, x_k$ and scalars $\beta\in\mathbb{R}$. If there is a way to get $0=\sum_{i=1}^k\beta_i x_i$ with at least one $\beta\neq 0$, we have linearly combination of the vectors in the set, with weights that are **not all zero**, we have a linearly dependent set.
+
+A set of vectors is **linearly independent** if none vector can be obtained as a linear combination of other vectors in the set. Again, consider a set of vectors $x_1, \ldots , x_k$ and scalars $\beta\in \mathbb{R}$. If the only way to get $0=\sum_{i=1}^k\beta_i x_i$ requires all $\beta_i=0, i=0, \ldots ,k$, then we have linearly independent vectors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
