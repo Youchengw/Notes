@@ -134,6 +134,7 @@ print("hello, world!")
 
 行内公式: 
 
+
 单位圆 $x^2+y^2=1$
 
 公式块:
@@ -267,7 +268,7 @@ $$
 因为 $\because$, 所以 $\therefore$, 存在 $\exist$, 任意 $\forall$.
 左小箭头 $\leftarrow$, 右小箭头 $\rightarrow$, 左大箭头 $\Leftarrow$, 右大箭头 $\Rightarrow$, 右长箭头 $\xrightarrow[fgh]{abcde}$.
 属于 $\in$, 包含于 $\subset$, 真包含于 $\subseteq$, 交 $\cap$, 并 $\cup$, 空集 $\empty$
-短向量 $\vec{x}$, 长向量 $\overrightarrow{AB}$, 上横线 $\overline{p}$.
+短向量 $\vec{x}$, 长向量 $\overrightarrow{vAB}$, 上横线 $\overline{p}$.
 无限 $\infty$, 极限 $\lim$, 微分 ${\rm d}$, 偏导 $\partial$, 点求导 $\dot{y}$, 点二阶导 $\ddot{y}$, 变化量 $\Delta$, 梯度 $\nabla$.
 横省略 $\cdots$, 竖省略 $\vdots$, 斜省略 $\ddots$.
 常见函数 $\sin$, $\cos$, $\tan$, $\arcsin$, $\arccos$, $\arctan$, $\ln$, $\log$, $\exp$.

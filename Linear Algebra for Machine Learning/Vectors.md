@@ -189,22 +189,106 @@ A set of vectors is linearly dependent if at least one vector can be obtanined a
 
 A set of vectors is **linearly independent** if none vector can be obtained as a linear combination of other vectors in the set. Again, consider a set of vectors $x_1, \ldots , x_k$ and scalars $\beta\in \mathbb{R}$. If the only way to get $0=\sum_{i=1}^k\beta_i x_i$ requires all $\beta_i=0, i=0, \ldots ,k$, then we have linearly independent vectors.
 
+## Vector null space
+Intuitively, the null space of a set of vectors are all linear combinations that "map" into the zero vector.
 
+## Vector norms
+Norms "map" vectors to non-negative values. In this sense are functions that assign length $\|\vec{x}\|\in\mathbb{R}^n$ to a vector $\vec{x}$. To be valid, a norm has to satisfy these properties:
+1. Absolutely homogeneous: $\forall\alpha\in\mathbb{R},\|\alpha\vec{x}\|=\|\alpha\|\|\vec{x}\|$.
+2. Triangle inequality: $\|\vec{x}+\vec{y}\|\leq\|\vec{x}\|+\|\vec{y}\|$
+3. Positive definite: $\|\vec{x}\|\geq 0$ and $\|\vec{x}\|=0\Leftrightarrow\vec{x}=\vec{0}$
 
+### Euclidean norm
+It is defined as:
+$$
+\|\vec{x}\|_2=\sqrt{\sum_{i=1}^n\vec{x_i}^2}=\sqrt{\vec{x}^T\vec{x}}
+$$
+Hense, in two dimensions the $L_2$ norm is:
+$$
+\|\vec{x}\|_2\in\mathbb{R}^2=\sqrt{x_1^2 x_2^2}
+$$
+Which is equivalent to the formula for the hypotenuse a triangle with sides $x_1^2$ and $x_2^2$.
+The same pattern follows for higher dimensions of $\mathbb{R}^n$.
+### Manhattan norm 
+It is defined as:
+$$\|\vec{x}\|_1:=\sum_{i=1}^n\ |\vec{x_i}|$$
+Where $|\vec{x_i}|$ is the absolute value. The $L_1$ norm is preferred when discriminating between elements that are exactly zero and elements that are small but not zero.
+### Max norm
+Tha max norm or infinity norm is simply the absolute value of the largest element in the vector. It is defined as:
+$$
+\|\vec{x}\|_\infty:=\max_i|\vec{x_i}|
+$$
 
+## Vector inner product, length, and distance.
+**Inner products** are a more general concept than **dot products**, with a series of additional properties. In other words, every dot product is an inner product, but not every inner product is a dot product. The notation for the inner product is usually a pair of angle brackets as$<\ldots>$. For instance, the scalar inner product is defined as:
+$$
+<\vec{x},\vec{y}>:=\vec{x}\cdot\vec{y}
+$$
+In $\mathbb{R}^n$ the inner product is a dot product defined as:
+$$
+\langle\begin{bmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{bmatrix},
+\begin{bmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix}\rangle := \vec{x}\cdot\vec{y}=
+\sum_{i=1}^n\ x_i y_i
+$$
 
+**Length** is a concept from geometry. We say that geometric vectors have length and that vectors in $\mathbb{R}^n$ have norm. In practice, many machine learning textbooks use these concepts interchangeably. 
+For instance, we can compute the length of a directed segment (i.e. geometrical vector) $\vec{x}$ by taking the square root of the inner product with itself as:
+$$
+\|\vec{x}\|=\sqrt{\vec{x}\cdot\vec{y}}=\sqrt{x^2+y^2}
+$$
 
+**Distance** is a relational concept. It refers to the length (or norm) of the difference between two vectors. Hence, we use norms and lengths to measure the distance between vectors. Consider the vectors $\vec{x}$ and $\vec{y}$, we define the distance $d(\vec{x},\vec{y})$ as:
+$$
+d(\vec{x},\vec{y}):=\|\vec{x}-\vec{y}=\sqrt{\langle\vec{x}-\vec{y},\vec{x}-\vec{y}\rangle}
+$$
 
+When the inner product $<x-y, x-y>$ is the dot product, the distance equals to the Euclidean distance. 
+In machine learning, unless made explicit, we can safely assume that an inner product refers to the dot product.
 
+As with the inner product, usually, we can safely assume that distance stands for the Euclidean distance or $L_2$ norm unless otherwise noted.
 
+## Vector angles and orthogonality
+In the same manner, inner products are used to define **angles** and **orthogonality**.
 
+In machine learning, the **angle** between a pair of vectors is used as a measure of vector similarity. Consider a pair of non-zero vectors $\vec{x}$ and $\vec{y}\in\mathbb{R}^n. The **Cauchy-Schwarz inequality** states that:
 
+$$
+\|<x,y>\|\leq\|x\|\|y\|
+$$
 
+The only case where both sides of the \expression are equal is when the vectors are colinear.
 
+The definition of the angle between vectors can be thougth as a generalization of the law of co\sines in trigonometry, which defines for a triangle with sides $a,b,and\ c$, and an angle $\theta$ are related as:
+$$
+c^2=a^2+b^2-2ab\cos{\theta}
+$$
 
+We can replace this \expression with vectors lengths as:
+$$
+\|x-y\|^2=\|x\|^2+\|y\|^2-2(\|x\|\|y\|)\cos{\theta}
+$$
+With a bit of algebraic manipulation, we can clear the previous equation to:
 
+$$
+\cos{\theta}=
+\displaystyle\frac {<x,y>}{\|x\|\|y\|}
+$$
+And there we have a definition for $(cos)$ angle $\theta$. Further, from the Cauchy-Schwarz inequality we know that $\cos{\theta}$ \must be:
+$$
+-1\leq\displaystyle\frac{<x,y>}{\|x\|\|y\|}\leq 1
+$$
 
+Orthogonality is often used interchangeably with "independence" although thet are mathematically different concepts. Orthogonality can be seen as a generalization of perpendicularity to vectors in ant number of dimensions. 
 
+We say that a pair of vectors $x$ and $y$ are orthogonal if their inner product is zero, $<x,y>=0$. The notation for a pair of orthogonal vectors is $x\perp y$. In the 2-dimensional plane, this equals to a pair of vectors forming a $90^\circ$ angle. 
 
 
 
