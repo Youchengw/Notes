@@ -290,5 +290,5 @@ Orthogonality is often used interchangeably with "independence" although thet ar
 
 We say that a pair of vectors $x$ and $y$ are orthogonal if their inner product is zero, $<x,y>=0$. The notation for a pair of orthogonal vectors is $x\perp y$. In the 2-dimensional plane, this equals to a pair of vectors forming a $90^\circ$ angle. 
 
-
-
+## Systhems of linear equations
+A system of linear equations involve multiple equations that have to be solved simultaneously. 
