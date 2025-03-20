@@ -65,7 +65,7 @@ Matrix-matrix multiplication is a dot product as well. To work, the number of co
 We define $A\in \mathbb{R}^{m\times n}\times B\in \mathbb{R}^{n\times p}= C\in \mathbb{R}^{m\times p}$
 $$
 c_{ij}:= \sum_{l=1}^n\ a_{il}b_{lj}, with\  i=1, \ldots m, and j = 1, \ldots p
-
+$$
 Matrix-matrix multiplication has a series of properties:
     1. Associativity: $(AB)C=A(BC)$
     2. Associativity with scalar multiplication:$\alpha(AB)=(\alpha A)B$
@@ -130,41 +130,41 @@ Matrices are said to be square when the number of rows = the number of columns.
 ### Diagonal matrix
 Square matices are said to be diagonal when each of its non-diagonal elemets is zero. For instance:
 $$
-\begin{bmatix}
+\begin{bmatrix}
 1 & 0 & 0 \\
 0 & 5 & 0 \\
 0 & 0 & 9
-\end{bmatix}
+\end{bmatrix}
 $$
 
 ### Upper triangular matrix
 Square matrices are sad to be upper triangular when the elements below the main diagonal are zero. For instance:
 $$
-\begin{bmatix}
+\begin{bmatrix}
 1 & 2 & 3 \\
 0 & 5 & 6 \\
 0 & 0 & 9
-\end{bmatix}
+\end{bmatrix}
 $$
 
 ### Identity matrix
 A diagonal matrix is said to be the identity when the elements along its main diagonal are equal to one. For instance:
 $$
-\begin{bmatix}
+\begin{bmatrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1
-\end{bmatix}
+\end{bmatrix}
 $$
 
 ### Scalar matrix
 Diagonal matrices are said to be scalar when all the elements along its main diagonal are equal. For instance:
 $$
-\begin{bmatix}
+\begin{bmatrix}
 2 & 0 & 0 \\
 0 & 2 & 0 \\
 0 & 0 & 2
-\end{bmatix}
+\end{bmatrix}
 $$
 
 ### Null or zero matrix
@@ -177,19 +177,19 @@ Matrices are said to be on echelon form when it has undergone the process of Gau
     3. Each leading entry is the only nonzero entry in its column.
 For instance:
 $$
-\begin{bmatix}
+\begin{bmatrix}
 1 & 3 & 5 \\
 2 & 2 & -1 \\
 1 & 3 & 2
-\end{bmatix}
+\end{bmatrix}
 $$
 In echelon form after Gaussian Elimination becomes:
 $$
-\begin{bmatix}
+\begin{bmatrix}
 1 & 3 & 5 \\
 0 & -4 & -11 \\
 0 & 0 & -3
-\end{bmatix}
+\end{bmatrix}
 $$
 
 ### Antidiagonal matrix
@@ -280,4 +280,103 @@ $$
 In words: all linear combinations of the column vectors of $A$ and entries of an $n$ dimensional vector $v$.
 
 ### The row space
-The row space of a matrix $A$ is composed of all linear combinations of the rows of a matrix. We denote the row space as $R(A)$. In other words, 
+The row space of a matrix $A$ is composed of all linear combinations of the rows of a matrix. We denote the row space as $R(A)$. In other words, $R(A)$ equals to the span of rows of $A$. Now, a different way to see the row space, is by transposing $A^T$. Now, we can define the row space simply as $R(A^T)$.
+
+For a matrix $A\in \mathbb{R}^{m\times n}$ and a vector $w\in \mathbb{R}^m$, the row sapce is defined as:
+$$
+R(A):=\left\{v\in \mathbb{R}^m | v=Aw^T\ for\ some\ w\in \mathbb{R}^n\right\}
+$$
+In words: all linear combinations of the row vectors of $A$ and entries of an dimensional vector $w$.
+
+### The null space
+The null space of a matrix $A$ is composed of all vectors that are map into the zero vector when multiplied by $A$. We denote the null space as $N(A)$.
+
+For a matrix $A\in \mathbb{R}^{m\times n}$ and a vector $v\in \mathbb{R}^n$, the null space is defined as:
+$$
+N(A):=\left\{v\in\mathbb{R}^m|Av=0\right\}
+$$
+
+### The null space of the transpose
+The left null space of a matrix $A$ is composed of all vectors that are map into the zero vector when multiplied by $A$ from the left. By "from the left", the vectors on the left of $A$. We denote that the left null space as $N(A^T)$
+
+For a matrix $A\in \mathbb{R}^{m\times n}$ and a vector $w\in \mathbb{R}^m$, the null space is defined as:
+$$
+N(A^T):=\left\{w\in \mathbb{R}^n|v^T A =0^T\right\}
+$$
+
+## Solving systems of linear equations with Matrices
+### Gaussian elimination
+Gaussian elimination, is a robust algorithm to solve linear systems. We say it is robust, because it works in general, in all possible circumstances. It works by eliminating terms from a system of equations, such that it is simplified to the point where we obtain the row echelon form of the matrix. A matrix is in row echelon form when all rows contain zeros at the bottom left of the matrix. For example:
+$$
+\begin{bmatrix}
+p_1&a&b\\
+0&p_2&c\\
+0&0&p_3
+\end{bmatrix}
+$$
+The p values along the diagonal are the pivots also know as basic variables of the matrix. An important remark about the pivots, is that they indicate which vectors are linearly independent in the matrix, onece the matrix has been reduced to the row echelon form.
+
+There are three elementary transformations in Gaussian elimination that when combined, allow simplifying any system to its row echelon form:
+    1. Addition and substration of two equations (rows)
+    2. Multiplication of an euqation (row) by a number
+    3. Switching equations (rows)
+
+Gauss-Jordan elimination
+The only difference between Gaussian Elimination and Gauss-Jordan Elimination, is that this time we "keep going" with the elemental row operations until we obtain the reduced row echelon form. The reduced part means two additional things:
+ (1) The pivots must be 1
+ (2) The entries above the pivots must be 0. 
+This is simplest form a system of linear equations can take.
+
+## Matrix basis and rank
+A set of n linearly independent column vectors with n elements form a basis. For instance, the column vectors of $A$ are a basis:
+$$
+\begin{bmatrix}
+1&0\\
+0&1
+\end{bmatrix}
+$$
+"A basis for what?" You may be wondering. In the case of A, for any vector $y\in \mathbb{R}^2$. On the contrary, the column vectors for B do not form a basis for $\mathbb{R}^2$:
+$$
+\begin{bmatrix}
+1&0&1\\
+0&1&1
+\end{bmatrix}
+$$
+In the case of $B$, the third column vector is a linear combination of first and second column vectors.
+The definition of a basis depends on the independence-dimension inequality, which states that a linearly independent set of n vectors can have at most n elements. Alternatively, we say that any set of n vectors with n+1 elements is, necessarily, linearly dependent. Given that each vectors in a basis is linearly independent, we say that any vector $y$ with n elements, can be generated in a unique linear combination of the basis vectors. Hence, any matrix more columns than rows (as in $B$) will have dependent vector. Basis are sometimes referred to as the minimal generating set.
+
+An important question is how to find the basis for a matrix. Another way to put the same question is to found out which vectors are linearly independent of each other. Hence, we n_ed to solve:
+$$
+\sum_{i=1}^k \beta_{i}\alpha_{i}=0
+$$
+Where $\alpha_i$ are the column vectors of $A$。 We can approach this by using Gaussian Elimination or Gauss-Jordan Eli\mination and reducing A to its row echelon form or reduced row echelon form. In either case, recall that the pivots of the echelon form indicate the set of linearly independent vectors in a matrix.
+
+Now that we know about a basis and how to find it, understanding the concept of rank is simpler. Than rank of a matrix $A$ is the dimensionality of the vector space generated by its number of linearly independent column vectors. This happens to be identical to the dimensionality of the vector space generated by its row vectors. We denote the rank of matrix as $rk(A)$ or $rank(A)$.
+
+For an square matrix $\mathbb{R}^{m\times n}$ (i.e., $m=n$), we say is full rank when every column and/or row is linearly independent. For a non-square matrix with $m>n$ (i.e. more rows than columns), we say is full rank when every column is linearly independent. When $m<n$ (i.e., more columns than rows), we say is full rank when every row is linearly independent.
+
+From an applied machine learning perspective, the rank of a matrix is relevant as a measure of the information content of the matrix. 
+
+## Matrix norm
+As with vectors, we can measure the size of a matrix by computing its norm. There are multiple ways to define the norm for a matrix, as long it satisfies the same properties defined for vector norms: (1) absolutely homogeneous (2) triangle inequality, (3) positive definite. Here are the three most commonly used norms in machine learning: (1) Frobenius norm, (2) max norm, (3) spectral norm.
+
+### Frobenius norm
+The Frobenius norm is an element-wise norm named after the German mathematician Ferdinand Georg Frobenius. We denote this norm as $||A||_{F}$. You can think about this norm as flattening out the matrix into a long vector. For instance, a $3\times 3$ matrix would become a vector with $n=9$ entries. We define the Frobenius norm as:
+$$
+||A||_{F}:=\sqrt{\sum_{i=1}^{m}\sum_{j=1}^{n} |a_{ij}|^2}
+$$
+where $A$ is a matrix with elements $a_{ij}$.
+In words: square each entry of A, add them together, and then take the square root.
+
+### Max norm
+The \max norm or infinity norm of a matrix equals to the largest sum of the absolute value of row vectors. We denote the max norm as $||A||_{max}$. Consider $A\in \mathbb{R}^{m\times n}$. We define the max norm for $A$ as:
+$$
+||A||_{max}:=max_{i}\sum_{j=1}^{n}|a_{ij}|
+$$
+
+This equals to go row by row, adding the absolute value of each entry, and then selecting the largest sum.
+
+### Spectral norm
+To understand this norm, it's necessary to first learn about eigenvectors and eigenvalues. The spectral norm of a matrix equals to the largest singular value $\sigma _1$. We denote the spectral norm as:
+$$
+||A||_2:=max_x 
