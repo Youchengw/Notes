@@ -379,4 +379,5 @@ This equals to go row by row, adding the absolute value of each entry, and then 
 ### Spectral norm
 To understand this norm, it's necessary to first learn about eigenvectors and eigenvalues. The spectral norm of a matrix equals to the largest singular value $\sigma _1$. We denote the spectral norm as:
 $$
-||A||_2:=max_x 
+||A||_2:=max_x \frac{||Ax||_2}{||x||_2}
+$$
