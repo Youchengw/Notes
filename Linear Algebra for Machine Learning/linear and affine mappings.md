@@ -181,3 +181,27 @@ $$
 This form is know as the affine transformation matrix. We made use of this form when we exemplified *translation*, which happens to be an affine mapping.
 
 ## Special linear mappings
+There are several important linear mappings (or transformations) that can be expressed as matrix-vector multiplications of the form $y=Ax$. Such mappings are common in image processing, computer vision, and other linear applications. Further, combinations of linear and nonlinear mappings are what complex models as neural networks do to learn mappings from inputs to outputs. Here we briefly review six of the most important linear mappings.
+
+### Scaling
+**Scaling** is a mapping of the form $y=Ax$, with $A=\alpha I$. Scaling *stretches* $x$ by a factor $|\alpha|$ when $\alpha <1$， *shrinks* $x$ when $\alpha <1$, and *reverses* the direction of the vector when $\alpha <0$. For geometrical objects in Euclidean space, scaling changes the size but not the shape of objects. An scaling matrix in $\mathbb{R}^2$ takes the form:
+$$
+\begin{bmatrix}
+s_1&0\\
+0&s_2
+\end{bmatrix}
+$$
+Where $s_1$ and $s_2$ are the scaling factors.
+
+### Reflection
+**Reflection** is the mirror image of an object in Euclidean space. For the general case, relection of a vector $x$ through a line that passes through through the origin is obtained as:
+$$
+\begin{bmatrix}
+\cos(2\theta)&\sin(2\theta)\\
+\sin(2\theta)&-\cos(2\theta)
+\end{bmatrix}s
+$$
+
+where $\theta$ are radians of inclination with respect to the horizontal axis. Let's examine a couple of special cases for a vector $x$ in $\mathbb{R}^2$ that can be extended to an arbitrary number of dimensions.
+
+Reflection along the horizontal axis, or around the line at 0 from the origin:
